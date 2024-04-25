@@ -1,0 +1,69 @@
+%-----------------------
+% `Proposal/main.tex' is the Proposal document root
+%-----------------------
+
+\documentclass[12pt, a4paper, oneside]{article}
+
+%-----------------------
+% Setup
+%-----------------------
+
+\input{Proposal/globals}
+\input{Proposal/packages}
+\input{Proposal/code-listings}
+\input{Proposal/commands}
+
+% Set paragraph indentation to 0
+\setlength{\parindent}{0pt}
+
+% Relative (from WORKSPACE root) path to biber-style reference list
+\addbibresource{Proposal/references.bib}
+
+% Relative (from WORKSPACE root) path to where images are stored
+\graphicspath{ {Proposal/UQLogo.png} }
+
+% Set frenchspacing
+\frenchspacing
+
+% Set document metadata
+\hypersetup{ 	
+    pdfsubject = {Project Proposal: \titletext},
+    pdftitle = {\titletext},
+    pdfauthor = {\authortext}
+}
+
+% Set 1.5 line spacing for the whole document
+\linespread{1.5}
+
+% Redefine the name of the table of contents
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+%-----------------------
+% Document contents
+%-----------------------
+
+\begin{document}
+
+\include{Proposal/sections/cover}
+% \setstretch{3.0} - to play with line spacing
+\include{Proposal/sections/abstract}
+% \setstretch{1.5}
+\clearpage % Start new page
+
+% Set page number to 1 for the table of contents
+\pagenumbering{arabic}
+\tableofcontents
+\clearpage
+
+\include{Proposal/sections/01_introduction}
+\include{Proposal/sections/02_background}
+\include{Proposal/sections/03_methodology}
+\include{Proposal/sections/04_project_plan}
+
+% Line Spacing = 2 for APA 7 Style Referencing
+{\linespread{2.0}
+\include{Proposal/sections/references}
+}
+\include{Proposal/sections/appendix}
+
+\end{document}
