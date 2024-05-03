@@ -1,0 +1,48 @@
+\section{Introduction}
+
+\subsection{Project Context}
+
+In this project, I will be working on a specific problem, that is, lack of temporal awareness in LLM-Based IR systems that incorporate RAG architectures such as ChatUQ, a chatbot under development for the University of Queensland. \\
+
+RAG is Retrieval Augmented Generation. RAG systems use a combination of retrieval and generation to produce responses that are both relevant and contextually rich. These systems are particularly useful in scenarios where answers require external knowledge beyond the training data of the model. They are essential in enhancing the capabilities of large language models (LLMs) in real-world applications \parencite{lewis2020retrieval}. \\
+
+Large Language Models leverage extensive training on diverse datasets to achieve an understanding of language nuances and generate coherent responses. These models, such as OpenAI's GPT series, are transformative in fields ranging from conversational AI to complex problem-solving, demonstrating profound capabilities in Information Retrieval \parencite{naveed2023comprehensive}. \\
+
+Information Retrieval(IR) systems are designed to extract relevant and precise information from large datasets quickly and efficiently, catering to specific user queries. These systems underpin the functionality of search engines, digital libraries, and data management services, providing critical support in navigating and accessing information \parencite{zhu2023large}.
+
+\subsection{Problem Domain \& Scope}
+
+Although this project aligns with the architecture and needs of ChatUQ, currently, direct integration into ChatUQ, or the use of its specific data, is out of scope. Preliminary analysis has identified a lack of temporal awareness as a critical gap within the ChatUQ system. The research will thus explore and develop methodologies in a broader context, mirroring the architecture used by ChatUQ—its LLMs and RAG pipelines—but will not utilize actual ChatUQ data due to privacy and ethical considerations. This approach ensures that ethical concerns regarding data access are managed, and software engineering complexities related to direct system integration are avoided. Although the research is not conducted on ChatUQ data directly, the findings and methodologies are expected to be fully transferable to the ChatUQ environment.
+
+\subsection{Motivation Behind the Project}
+
+The motivation for this research stems from the observed deficiencies in temporal awareness in LLMs used within the ChatUQ framework. Current models struggle to accurately address time-sensitive queries, often failing to recognize or properly contextualize temporal expressions. For ex. Table 1 contains 5 queries and with their answers that the current model produces. \\
+
+
+\begin{table}[ht]
+\label{tab:queries_answers}
+\begin{tabular}{|p{0.4\textwidth}|p{0.6\textwidth}|}
+\hline
+\centering\textbf{Query} & \centering\textbf{Generated Answer} \tabularnewline
+\hline
+When is my next DATA7901 assignment due? & Your next assignment due date is not available in the provided context. \\
+\hline
+What happened in the last student committee meeting at UQ? & Based on the new context provided, the most recent discussion topic in the last student committee meeting at UQ was not provided. \\
+\hline
+When is my next class? & The next class is not available in the provided context. \\
+\hline
+When will the election for the next Academic Board be held at UQ? & The next Academic Board election at UQ will not be held in April or July 2019, as previously stated. Instead, the election will be held in October 2019. \\
+\hline
+When will the Exams for Semester 1, 2024 be held at the University of Queensland? & The Exams for Semester 1, 2024 at the University of Queensland have not been announced yet. \\
+\hline
+\end{tabular}
+\centering
+\caption{Examples of ChatUQ Failing to Capture Temporal Context in Queries}
+\end{table}
+
+
+As I can see from Table 1, the model does not give time-aware answers. This deficiency not only diminishes user experience but also impacts the reliability of the chatbot in delivering timely and accurate information. Enhancing temporal awareness in LLMs will significantly improve their utility and accuracy. This improvement is crucial for maintaining the relevance and effectiveness of AI systems in educational environments, where up-to-date information is often critical.
+
+\subsection{Overview of the Project}
+
+In my research, I aim to identify and measure gaps in how Large Language Models (LLMs) handle time-related information. I will analyze how often and under what conditions these models misunderstand temporal data. To do this, I will create and refine a dataset of diverse temporal queries to test and improve the accuracy of LLM responses in information retrieval (IR) systems. Additionally, I will explore existing solutions for similar issues, adapting these methods to fit the specific needs of my research. I also plan to develop new strategies targeted at overcoming the current systems' limitations. A key part of my research involves a detailed evaluation of these solutions, not just to test their initial effectiveness but also to develop an ongoing improvement process for integration into broader applications. My goal is to forge a path for continuous progress, ensuring that our approaches remain adaptable and relevant in the ever-evolving field of LLMs and IR.
